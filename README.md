@@ -86,6 +86,10 @@ Después abre `http://localhost:8000` en el navegador.
 | `Espacio` | Hard drop (caída instantánea)     |
 | `P`       | Pausar / reanudar                 |
 
+### Tema claro / oscuro
+
+El botón del panel lateral alterna entre tema oscuro (por defecto) y claro. La elección se guarda en `localStorage`. Los colores se definen como variables CSS en `style.css` (`:root` y `:root[data-theme="light"]`).
+
 ---
 
 ## Cómo funciona
