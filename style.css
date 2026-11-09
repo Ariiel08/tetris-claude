@@ -36,6 +36,12 @@
   --shadow: rgba(0, 0, 0, 0.15);
 }
 
+/* Skin Neon: tablero siempre oscuro, también con tema claro */
+:root[data-skin="neon"] {
+  --board-bg: #000000;
+  --grid: #1a1a2e;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -122,6 +128,18 @@ body {
 
 #theme-toggle:hover {
   border-color: var(--accent);
+}
+
+/* ---- Selector de skin ---- */
+#skin-select {
+  align-self: flex-start;
+  background: var(--kbd-bg);
+  color: var(--text);
+  border: 1px solid var(--kbd-border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 /* ---- Controles ---- */
