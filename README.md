@@ -85,7 +85,15 @@ Después abre `http://localhost:8000` en el navegador.
 | `↑` o `X` | Rotar la pieza en sentido horario |
 | `↓`       | Soft drop (bajar más rápido)      |
 | `Espacio` | Hard drop (caída instantánea)     |
-| `P`       | Pausar / reanudar                 |
+| `P` / `Esc` | Pausar / reanudar               |
+
+### Menú de pausa
+
+Al pausar se abre un menú con: **Reanudar**, **Reiniciar**, **Ver controles** (lista de teclas, con botón Volver) y **Nivel inicial** (1–15). El nivel inicial se aplica a la siguiente partida (al pulsar Reiniciar); la dificultad sigue subiendo cada 10 líneas a partir de ese nivel. Mientras el menú está abierto, el juego ignora las teclas de movimiento.
+
+### Tabla de records
+
+Al abrir el juego aparece una pantalla de inicio con el **top 5** de puntuaciones, el **mejor combo** y las **líneas máximas** conseguidas; el juego empieza al pulsar **Jugar**. Al terminar la partida, si la puntuación entra en el top se pide un nombre (máx. 12 caracteres; Enter o **Guardar**) y la fila se resalta. Un _combo_ es el número de piezas consecutivas que limpian al menos una línea. Los datos se guardan en `localStorage` (clave `records`: `{ top: [{name, score}], bestCombo, maxLines }`) y el botón **Resetear records** (con confirmación) los borra.
 
 ### Tema claro / oscuro
 
@@ -194,6 +202,7 @@ Algunos parámetros fáciles de tunear en `game.js`:
 | `COLORS`       | Paleta de colores por tipo de pieza      | 8 colores             |
 | `LINE_SCORES`  | Puntos por 1, 2, 3 o 4 líneas eliminadas | `[0,100,300,500,800]` |
 | `dropInterval` | Velocidad inicial de caída en ms         | `1000`                |
+| `MAX_START_LEVEL` | Nivel inicial máximo del menú de pausa | `15`                  |
 
 > Si cambias `COLS`, `ROWS` o `BLOCK`, recuerda ajustar también `width` y `height` del `<canvas id="board">` en `index.html` para que coincida (`COLS × BLOCK` × `ROWS × BLOCK`).
 
