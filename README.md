@@ -91,6 +91,10 @@ Después abre `http://localhost:8000` en el navegador.
 
 Al pausar se abre un menú con: **Reanudar**, **Reiniciar**, **Ver controles** (lista de teclas, con botón Volver) y **Nivel inicial** (1–15). El nivel inicial se aplica a la siguiente partida (al pulsar Reiniciar); la dificultad sigue subiendo cada 10 líneas a partir de ese nivel. Mientras el menú está abierto, el juego ignora las teclas de movimiento.
 
+### Tabla de records
+
+Al abrir el juego aparece una pantalla de inicio con el **top 5** de puntuaciones, el **mejor combo** y las **líneas máximas** conseguidas; el juego empieza al pulsar **Jugar**. Al terminar la partida, si la puntuación entra en el top se pide un nombre (máx. 12 caracteres; Enter o **Guardar**) y la fila se resalta. Un _combo_ es el número de piezas consecutivas que limpian al menos una línea. Los datos se guardan en `localStorage` (clave `records`: `{ top: [{name, score}], bestCombo, maxLines }`) y el botón **Resetear records** (con confirmación) los borra.
+
 ### Tema claro / oscuro
 
 El botón del panel lateral alterna entre tema oscuro (por defecto) y claro. La elección se guarda en `localStorage`. Los colores se definen como variables CSS en `style.css` (`:root` y `:root[data-theme="light"]`).
