@@ -91,6 +91,19 @@ Después abre `http://localhost:8000` en el navegador.
 
 El botón del panel lateral alterna entre tema oscuro (por defecto) y claro. La elección se guarda en `localStorage`. Los colores se definen como variables CSS en `style.css` (`:root` y `:root[data-theme="light"]`).
 
+### Skins visuales
+
+El selector **SKIN** del panel lateral cambia la apariencia de los bloques sin recargar la página; la elección se guarda en `localStorage` (clave `skin`). Es compatible con el tema claro / oscuro.
+
+| Skin        | Descripción                                                        |
+|-------------|--------------------------------------------------------------------|
+| Retro       | Bloques cuadrados de color plano (por defecto)                     |
+| Neon        | Fondo negro y brillo con `shadowBlur`                              |
+| Pastel      | Colores suaves y esquinas redondeadas                              |
+| Pixel art   | Textura de píxeles dibujada sobre cada bloque                      |
+
+Cada skin se define en `SKINS` (`game.js`, sección `// ---- Skins ----`) con su propio array `colors` (mismo índice que `COLORS`) y una función `draw(context, px, py, size, color)`. `drawBlock()` delega en la skin activa.
+
 ---
 
 ## Cómo funciona
