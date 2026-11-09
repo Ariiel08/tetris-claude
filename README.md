@@ -87,6 +87,10 @@ Después abre `http://localhost:8000` en el navegador.
 | `Espacio` | Hard drop (caída instantánea)     |
 | `P`       | Pausar / reanudar                 |
 
+### Tabla de records
+
+Al abrir el juego aparece una pantalla de inicio con el **top 5** de puntuaciones, el **mejor combo** y las **líneas máximas** conseguidas; el juego empieza al pulsar **Jugar**. Al terminar la partida, si la puntuación entra en el top se pide un nombre (máx. 12 caracteres; Enter o **Guardar**) y la fila se resalta. Un _combo_ es el número de piezas consecutivas que limpian al menos una línea. Los datos se guardan en `localStorage` (clave `records`: `{ top: [{name, score}], bestCombo, maxLines }`) y el botón **Resetear records** (con confirmación) los borra.
+
 ### Tema claro / oscuro
 
 El botón del panel lateral alterna entre tema oscuro (por defecto) y claro. La elección se guarda en `localStorage`. Los colores se definen como variables CSS en `style.css` (`:root` y `:root[data-theme="light"]`).

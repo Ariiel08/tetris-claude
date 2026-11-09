@@ -27,6 +27,8 @@ Key points in `game.js` that need more than one function read to understand:
 - **Locking runs in a fixed order:** `lockPiece()` → `merge()` → `clearLines()` (which also updates score, level and `dropInterval`) → `spawn()`.
 - **Board dimensions are duplicated in HTML.** `COLS × BLOCK` and `ROWS × BLOCK` must match the `<canvas id="board">` `width`/`height` in `index.html` (300×600). The next-piece preview assumes a 4×4 grid of 30px cells (120×120 canvas).
 
+- **Start screen and records.** The game does not start on load: `#start-overlay` shows the top-5 table and `init()` runs only when "Jugar" is pressed (`started` guards the keydown handler). Records live in `localStorage` key `records` (`{ top, bestCombo, maxLines }`), handled in the `// ---- Records ----` section of `game.js`; `endGame()` calls `finishRecords()`.
+
 ## Conventions
 
 - User-facing text (UI labels, overlay messages, README) is in Spanish; code identifiers are in English.
