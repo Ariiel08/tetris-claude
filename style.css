@@ -273,6 +273,46 @@ kbd {
 .name-row input {
   width: 130px;
   padding: 6px 8px;
+}
+/* ---- Pausa ---- */
+.pause-menu, .controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  min-width: 190px;
+}
+
+.pause-menu.hidden, .controls-panel.hidden, #restart-btn.hidden {
+  display: none;
+}
+
+.menu-btn {
+  background: var(--accent);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.menu-btn:hover {
+  background: var(--accent-hover);
+}
+
+.level-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.level-select select {
   background: var(--kbd-bg);
   color: var(--text);
   border: 1px solid var(--kbd-border);
